@@ -9,9 +9,9 @@ fa-icon: desktop
 
 > I love software websites without screenshots of the actual thing. − No one ever.
 
-![showxp](https://i.imgur.com/95hd6gR.png)
+![showxp](https://i.imgur.com/CvYsGY0.jpg)
 
-![viewxp](https://i.imgur.com/y71dbkb.png)
+![viewxp](https://i.imgur.com/dXDmcxT.jpg)
 
 -------------------------
 
