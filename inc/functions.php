@@ -536,8 +536,7 @@ function is_owned_by_user($id, $table, $userid)
     $req = $pdo->prepare($sql);
     $req->execute();
     $result = $req->fetchColumn();
-		
-    return (int)$result === (int)$userid;
+    return $result === $userid;
 }
 
 /*
@@ -597,7 +596,7 @@ function get_team_config($column = null)
 
     // remove notice when not logged in
     if (isset($_SESSION['team_id'])) {
-        $sql = "SELECT * FROM teams WHERE team_id = :team_id";
+        $sql = "SELECT * FROM `teams` WHERE team_id = :team_id";
         $req = $pdo->prepare($sql);
         $req->execute(array(
             'team_id' => $_SESSION['team_id']
