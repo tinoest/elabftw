@@ -284,7 +284,6 @@ function showXP($id, $display = 'default')
             echo "<img src='img/lock-blue.png' alt='lock' title='Locked' />";
         }
         echo stripslashes($experiments['title']);
-        echo show_tags($id, 'experiments_tags');
         echo "</a></span></section>";
     } else { // NOT COMPACT
         ?>
