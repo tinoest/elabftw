@@ -68,7 +68,7 @@ $search_type = '';
                 <select name='tag_exp'>
                     <option value=''><?php echo _('Select a Tag'); ?></option>
                     <?php // Experiments tags
-                    $sql = "SELECT tag, COUNT(id) as nbtag, userid FROM experiments_tags WHERE userid = :userid GROUP BY tag ORDER BY tag ASC";
+                    $sql = "SELECT tag, COUNT(id) as nbtag FROM experiments_tags WHERE userid = :userid GROUP BY tag ORDER BY tag ASC";
                     $req = $pdo->prepare($sql);
                     // we want to show the tags of the selected person in 'search in' dropdown
                     // so if there is a owner parameter, use it to select tags
@@ -443,7 +443,9 @@ if (isset($_GET)) {
             // on a fresh install, if there is no tags, it will not find anything
             // so we make a left join
             // https://stackoverflow.com/questions/3171276/select-multiple-tables-when-one-table-is-empty-in-mysql
-            $sql = "SELECT exp.* FROM experiments as exp LEFT JOIN experiments_tags as exptag ON 1=1 WHERE" . $sqlFirst . $sqlTitle . $sqlBody . $sqlTag . $sqlStatus . $sqlDate . $sqlGroup;
+            $sql = "SELECT exp.* FROM experiments AS exp LEFT JOIN experiments_tags AS exptag ON 1=1 WHERE" . $sqlFirst . $sqlTitle . $sqlBody . $sqlTag . $sqlStatus . $sqlDate . $sqlGroup;
+
+
             $req = $pdo->prepare($sql);
             // if there is a selection on 'owned by', we use the owner id as parameter
             if ($owner_search) {

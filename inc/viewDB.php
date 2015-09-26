@@ -52,7 +52,7 @@ $data = $req->fetch();
 <!-- begin item view -->
 <section class="box">
 
-<span class='date_view'><img src='img/calendar.png' title='date' alt='Date :' /> <?php echo Tools::formatDate($data['date']); ?></span><br>
+<span class='date_view'><img src='img/calendar.png' title='date' alt='Date :' /> <?php echo Tools::formatDate((string)$data['date']); ?></span><br>
 <?php
 show_stars($data['rating']);
 // buttons

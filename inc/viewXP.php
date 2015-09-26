@@ -129,13 +129,12 @@ if ($data['timestamped'] == 1) {
     unset($timestamper);
     unset($uploads);
 }
-
 // Display experiment
 ?>
     <section class="item" style='padding:15px;border-left: 6px solid #<?php echo $data['color']; ?>'>
     <span class='top_right_status'><img src='img/status.png'><?php echo $data['name']; ?><img src='img/eye.png' alt='eye' /><?php echo $visibility; ?></span>
 <?php
-echo "<span class='date_view'><img src='img/calendar.png' class='bot5px' title='date' alt='Date :' /> " . Tools::formatDate($data['date']) . "</span><br />
+echo "<span class='date_view'><img src='img/calendar.png' class='bot5px' title='date' alt='Date :' /> " . Tools::formatDate((string)$data['date']) . "</span><br />
     <a href='experiments.php?mode=edit&id=".$data['expid'] . "'><img src='img/pen-blue.png' title='edit' alt='edit' /></a>
 <a href='app/duplicate_item.php?id=".$data['expid'] . "&type=exp'><img src='img/duplicate.png' title='duplicate experiment' alt='duplicate' /></a>
 <a href='make.php?what=pdf&id=".$data['expid'] . "&type=experiments'><img src='img/pdf.png' title='make a pdf' alt='pdf' /></a>
