@@ -141,8 +141,8 @@ class User
         $perm_req->execute();
         $group = $perm_req->fetch(\PDO::FETCH_ASSOC);
 
-        $_SESSION['is_admin'] = $group['is_admin'];
-        $_SESSION['is_sysadmin'] = $group['is_sysadmin'];
+        $_SESSION['is_admin'] = (string)$group['is_admin'];
+        $_SESSION['is_sysadmin'] = (string)$group['is_sysadmin'];
 
         // PREFS
         $_SESSION['prefs'] = array(
